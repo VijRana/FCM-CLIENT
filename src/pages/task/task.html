@@ -1,0 +1,40 @@
+<!--
+  Generated template for the TaskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+  <form (ngSubmit)="submitTask(f)" #f="ngForm">
+    <ion-label>TaskName</ion-label>
+    <ion-item>
+      <ion-input type="text" name="tname" ngModel></ion-input>
+    </ion-item>
+    <ion-label>Approval</ion-label>
+   <ion-item>
+     <ion-input type="text" name="pmo" ngModel></ion-input>
+   </ion-item>
+   
+      <button ion-button type="submit" block>Submit</button>
+ </form>
+ 
+ <ion-item no-padding>
+</ion-item>
+  <rl-tag-input
+    [addOnBlur]="false"
+    [autocomplete]="true"
+    [autocompleteItems]="users"
+    [(ngModel)]="approvals"
+    placeholder="Eneter Name">
+  </rl-tag-input>
+<br><hr>
+<ion-list>
+  <ion-item text-wrap>
+    <h2>User:</h2>
+    {{approvals | json}}
+  </ion-item>
+</ion-list> 
+ <br/>
+ <p>{{message}}</p>
+</ion-content>

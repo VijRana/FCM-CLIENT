@@ -1,0 +1,7 @@
+{
+  "name": "fcm-client",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

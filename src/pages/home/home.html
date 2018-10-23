@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      IDPPUSH
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col col-8>PWC IDP Project Notification</ion-col>
+      <ion-col col-4>
+        <ion-checkbox checked="false" [(ngModel)]="allowPush" (click)="onChange()"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8>Send me Personal messages</ion-col>
+      <ion-col col-4>
+        <ion-checkbox checked="false" [(ngModel)]="allowPersonal" (click)="onPmChange()"></ion-checkbox>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <!--<p>Ionic Toke:</p>
+   <h3>{{token}}</h3> -->
+  <ion-list>
+    <ion-item *ngFor="let item of items" text-wrap>
+      {{item.id}}. {{item.text}}
+    </ion-item>
+  </ion-list>
+<br/>
+  <form (ngSubmit)="signUp(f)" #f="ngForm">
+    <ion-label>Name</ion-label>
+    <ion-item>
+      <ion-input type="text" name="uname" ngModel></ion-input>
+    </ion-item>
+    <ion-label>Mobile</ion-label>
+   <ion-item>
+     <ion-input type="text" name="mob" ngModel></ion-input>
+   </ion-item>
+   <ion-label>Password</ion-label>
+   <ion-item>  
+      <ion-input type="password" name="psw" ngModel></ion-input>
+    </ion-item>
+    <ion-label>Email ID</ion-label>
+    <ion-item>  
+       <ion-input type="text" name="email" ngModel></ion-input>
+     </ion-item>
+     <ion-label>Role</ion-label>
+     <ion-item>
+      <ion-select name="role" ngModel>
+        <ion-option *ngFor= "let r of roles" [value]="r">{{r}}</ion-option>
+        </ion-select>
+     </ion-item>
+      <button ion-button type="submit" block>SignUP</button>
+ </form>
+
+ <h3>
+   {{isSucess}}
+ </h3>
+ <button ion-button type="button" (click)="gotoTaskPage()">Go To Task</button>
+</ion-content>
